@@ -1,13 +1,22 @@
 import React from 'react'
+import { useState } from 'react';
 
-const handleClick = () => {
-  console.log("Click Event Happened")
-}
 
 const App = () => {
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    setCount(count + 1);
+  }
+
   return (
     <div>
-      <button onClick={handleClick}>Add Animal</button>
+      <div>
+        <button onClick={handleClick}>Add Animal</button>
+      </div>
+      <div>
+        <h2>Number of animals: {count}</h2>
+      </div>
     </div>
   )
 }
